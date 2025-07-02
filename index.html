@@ -1,1 +1,1113 @@
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دار الرحمة لرعاية وتأهيل الأيتام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #f8f9fa;
+            color: #333;
+            min-height: 100vh;
+            padding-bottom: 60px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* الترويسة */
+        header {
+            background: linear-gradient(135deg, #1a3a5f, #2c5f8a);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            background: #ff9e1b;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-icon i {
+            font-size: 2.2rem;
+            color: white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button {
+            background: #ff9e1b;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button i {
+            margin-left: 8px;
+        }
+        
+        .cta-button:hover {
+            background: #e88c0f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* القسم الرئيسي */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 95, 0.85), rgba(26, 58, 95, 0.85)), 
+                        url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+        
+        /* أقسام المحتوى */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1a3a5f;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff9e1b;
+            border-radius: 2px;
+        }
+        
+        /* قسم حول الدار */
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: #1a3a5f;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f0f5ff;
+            padding: 12px 15px;
+            border-radius: 8px;
+        }
+        
+        .feature-item i {
+            color: #ff9e1b;
+            font-size: 1.2rem;
+        }
+        
+        /* قسم الخدمات */
+        .services {
+            background: #f0f5ff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 35px 25px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff9e1b, #ffc107);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #1a3a5f;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* قسم الإحصائيات */
+        .stats {
+            background: linear-gradient(135deg, #1a3a5f, #2c5f8a);
+            color: white;
+            padding: 70px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 25px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ff9e1b;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+        }
+        
+        /* قسم التبرع */
+        .donation {
+            background: white;
+            text-align: center;
+        }
+        
+        .donation-box {
+            background: linear-gradient(135deg, #ff9e1b, #ffc107);
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .donation-box h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .donation-box p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .donation-option {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .donation-option:hover, .donation-option.active {
+            background: white;
+            color: #ff9e1b;
+        }
+        
+        /* قسم الأخبار */
+        .news {
+            background: #f0f5ff;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-date {
+            color: #ff9e1b;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .news-card h3 {
+            font-size: 1.4rem;
+            color: #1a3a5f;
+            margin-bottom: 15px;
+        }
+        
+        .news-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            color: #1a3a5f;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* قسم الاتصال */
+        .contact {
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #f0f5ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon i {
+            font-size: 1.3rem;
+            color: #1a3a5f;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            color: #1a3a5f;
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background: #f0f5ff;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a3a5f;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #ff9e1b;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 158, 27, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* الخريطة */
+        .map {
+            height: 300px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 40px;
+            background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Marib,Yemen&zoom=12&size=600x300&maptype=roadmap&key=AIzaSyD3E1D9b-Z7ekzT3g_Rj8vTgeC4dJzXy0Y');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* فوتر الموقع */
+        footer {
+            background: #1a3a5f;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #ff9e1b;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ff9e1b;
+            padding-right: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #ff9e1b;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        .developer {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .developer span {
+            color: #ff9e1b;
+        }
+        
+        /* التنسيق للجوالات */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text {
+                width: 100%;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            
+            .donation-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الترويسة -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>دار الرحمة</h1>
+                    <p>لرعاية وتأهيل الأيتام</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#donation">التبرع</a></li>
+                    <li><a href="#news">الأخبار</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <button class="cta-button">
+                <i class="fas fa-hand-holding-heart"></i> تبرع الآن
+            </button>
+        </div>
+    </header>
+    
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>نحن نصنع مستقبلًا أفضل للأيتام</h2>
+            <p>دار الرحمة تقدم الرعاية الشاملة والتعليم والتأهيل النفسي والاجتماعي للأيتام لتمكينهم من بناء مستقبل مشرق</p>
+            <button class="cta-button">
+                <i class="fas fa-hands-helping"></i> ساهم معنا
+            </button>
+        </div>
+    </section>
+    
+    <!-- قسم من نحن -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">من نحن</h2>
+            <div class="about-content">
+                <div class="about-image"></div>
+                <div class="about-text">
+                    <h3>دار الرحمة لرعاية وتأهيل الأيتام</h3>
+                    <p>تأسست دار الرحمة عام 2021 بهدف تقديم الرعاية الشاملة للأيتام، حيث نؤمن بأن كل طفل يتيم يستحق حياة كريمة وفرصًا متكافئة لتحقيق أحلامه وطموحاته.</p>
+                    <p>تحتضن الدار حاليًا سبعين يتيمًا، يتلقون الرعاية الشاملة في مختلف جوانب الحياة. نقدم رعاية متكاملة تشمل: الإيواء، التغذية، التعليم، الرعاية الصحية، والدعم النفسي والاجتماعي.</p>
+                    <p>تضم الدار مدرسة أهلية خاصة، توفر التعليم الأساسي وفق مناهج معتمدة وتحت إشراف تربوي متخصص. كما تحتوي الدار على معمل حاسوب حديث، يهدف إلى تنمية مهارات الطلاب التقنية وتأهيلهم لمتطلبات العصر.</p>
+                    <p>تسعى الدار إلى بناء شخصية متوازنة لليتيم، من خلال برامج دينية وتربوية وثقافية وترفيهية متنوعة.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>70 يتيم تحت الرعاية</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-school"></i>
+                            <span>مدرسة أهلية خاصة</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-laptop"></i>
+                            <span>معمل حاسوب حديث</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart"></i>
+                            <span>رعاية شاملة متكاملة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الخدمات -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>رعاية سكنية متكاملة</h3>
+                    <p>نوفر بيئة أسرية دافئة مع غرف مريحة ومرافق تعليمية وترفيهية متكاملة، ووجبات غذائية صحية يومية.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>التعليم والتدريب</h3>
+                    <p>برامج تعليمية متميزة في مدرستنا الأهلية الخاصة وفق مناهج معتمدة وتحت إشراف تربوي متخصص.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>الرعاية الصحية</h3>
+                    <p>رعاية طبية شاملة، فحوصات دورية، تغذية صحية، وبرامج توعوية للحفاظ على صحة الأطفال.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>الدعم النفسي</h3>
+                    <p>جلسات إرشاد نفسي فردية وجماعية مع متخصصين لمساعدة الأطفال على تجاوز الصدمات والتكيف الاجتماعي.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>الأنشطة الترفيهية</h3>
+                    <p>رحلات ترفيهية، أنشطة رياضية، مسابقات ثقافية، وورش عمل فنية لتنمية مواهب الأطفال.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>التدريب التقني</h3>
+                    <p>تدريب على الحاسوب في معملنا الحديث لتنمية المهارات التقنية وتأهيل الأطفال لمتطلبات العصر الرقمي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الإحصائيات -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">70+</div>
+                    <div class="stat-text">طفل يتيم تحت رعايتنا</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-text">سنوات من العطاء</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-text">فصل دراسي متكامل</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">متبرع ومؤسسة داعمة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم التبرع -->
+    <section id="donation" class="section donation">
+        <div class="container">
+            <h2 class="section-title">ساهم في رعاية الأيتام</h2>
+            <div class="donation-box">
+                <h3>بادر بالخير وشارك في صنع البسمة</h3>
+                <p>تبرعك اليوم يغير حياة طفل يتيم ويصنع مستقبلاً أفضل له. كل ريال تقدمه يساهم في توفير الرعاية والتعليم والعلاج لأطفال فقدوا سندهم في الحياة.</p>
+                
+                <div class="donation-options">
+                    <div class="donation-option active">100 ريال</div>
+                    <div class="donation-option">250 ريال</div>
+                    <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>التدريب التقني</h3>
+                    <p>تدريب على الحاسوب في معملنا الحديث لتنمية المهارات التقنية وتأهيل الأطفال لمتطلبات العصر الرقمي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الأخبار -->
+    <section id="news" class="section news">
+        <div class="container">
+            <h2 class="section-title">أخبار وأنشطة الدار</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="news-content">
+                        <span class="news-date">15 يونيو 2025</span>
+                        <h3>اختتام معسكر صيفي لتنمية المواهب</h3>
+                        <p>اختتمت دار الرحمة معسكرها الصيفي السنوي الذي استمر لمدة أسبوعين، وشارك فيه 70 طفلاً في أنشطة ترفيهية وتعليمية متنوعة.</p>
+                        <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="news-content">
+                        <span class="news-date">8 يونيو 2025</span>
+                        <h3>افتتاح معمل الحاسوب الحديث</h3>
+                        <p>احتفلت الدار بافتتاح معمل الحاسوب الحديث المجهز بأحدث الأجهزة لتطوير مهارات الأطفال التقنية.</p>
+                        <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="news-content">
+                        <span class="news-date">1 يونيو 2025</span>
+                        <h3>حفل تخريج الدفعة الأولى</h3>
+                        <p>احتفلت دار الرحمة بتخريج الدفعة الأولى من طلابها الذين أكملوا المرحلة الابتدائية في مدرسة الدار.</p>
+                        <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الاتصال -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">اتصل بنا</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>العنوان</h4>
+                            <p>اليمن - مأرب - البقائل</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>الهاتف</h4>
+                            <p>+٩٦٧٧٧٥٢٠٩٤٨٥</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@dar-alrahma.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>ساعات العمل</h4>
+                            <p>الأحد - الخميس: 8 صباحاً - 4 مساءً</p>
+                            <p>الجمعة والسبت: مغلق</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>أرسل لنا رسالة</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map"></div>
+        </div>
+    </section>
+    
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>دار الرحمة</h3>
+                    <p>مؤسسة خيرية غير ربحية تهدف إلى رعاية وتأهيل الأيتام وتقديم الدعم الشامل لهم لبناء مستقبل أفضل.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#donation">التبرع</a></li>
+                        <li><a href="#news">الأخبار</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>طرق التبرع</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">التبرع المباشر</a></li>
+                        <li><a href="#">التحويل البنكي</a></li>
+                        <li><a href="#">كفالة يتيم</a></li>
+                        <li><a href="#">التبرع العيني</a></li>
+                        <li><a href="#">التطوع معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>اشترك في النشرة البريدية</h3>
+                    <p>ابق على اطلاع بآخر أخبار وأنشطة الدار</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="بريدك الإلكتروني" required>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> اشترك الآن
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2025 دار الرحمة لرعاية وتأهيل الأيتام</p>
+                <p class="developer">تطوير: <span>ضياء المحجري</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // التحكم في التبويبات
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // إزالة الفعالية من جميع الروابط
+                navLinks.forEach(l => l.classList.remove('active'));
+                // إضافة الفعالية للرابط المختار
+                this.classList.add('active');
+            });
+        });
+        
+        // التحكم في خيارات التبرع
+        const donationOptions = document.querySelectorAll('.donation-option');
+        
+        donationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // إزالة الفعالية من جميع الخيارات
+                donationOptions.forEach(o => o.classList.remove('active'));
+                // إضافة الفعالية للخيار المختار
+                this.classList.add('active');
+            });
+        });
+        
+        // تأثير التمرير السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // تغيير لون الترويسة عند التمرير
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'linear-gradient(135deg, #1a3a5f, #1a3a5f)';
+                header.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.25)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1a3a5f, #2c5f8a)';
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            }
+        });
+        
+        // رسالة عند النقر على التبرع
+        const donateButtons = document.querySelectorAll('.cta-button');
+        donateButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                alert('شكرًا لمبادرتك بالتبرع! سيتم توجيهك إلى صفحة التبرع الآمنة.');
+            });
+        });
+        
+        // تاريخ التأسيس
+        const currentYear = new Date().getFullYear();
+        const foundingYear = 2021;
+        const yearsOfService = currentYear - foundingYear;
+        document.querySelector('.stat-item:nth-child(2) .stat-number').textContent = yearsOfService;
+    </script>
+</body>
+</html>
